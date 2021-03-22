@@ -105,6 +105,6 @@ Route::get('/admin_delete{id}/', 'App\Http\Controllers\MessageController@adminDe
 
 Route::get('/', 'App\Http\Controllers\MessageController@showMessagesPublic')->name('index');
 
-
+Route::get('/get_documents/{section}', 'App\Http\Controllers\DocumentsController@getDocuments')->name('get_documents');
 
 

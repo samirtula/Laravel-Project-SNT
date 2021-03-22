@@ -15,7 +15,7 @@
                 @foreach($data as $item)
                     <a class="news__article article" href="{{route('news-one', $item->id)}}">
                         <img class="article__image" src="{{$item->img_path}}" alt="">
-                        <span style="align-self: start">{{substr($item->created_at, 0, -3)}} </span>
+                        <span style="align-self: start">{{substr($item->created_at, 0, -3)}}</span>
                         <div class="article__text">
                             <h5>{{$item->header}}</h5>
                             <p>{{$item->text}}</p>

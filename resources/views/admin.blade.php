@@ -8,7 +8,7 @@
             <div class="column ">
                 <div class="card">
                     <div class="card-title">
-                        <h3>Заполните поля для добавления объявления </h3>
+                        <h3>Заполните поля для добавления объявления на главную страницу</h3>
                     </div>
                     <div class="card-block">
                         <form action="{{route('add_message')}}" method="post"  style="display: flex; flex-direction: column" class="forms " enctype="multipart/form-data">

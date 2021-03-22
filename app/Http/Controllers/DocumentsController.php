@@ -14,14 +14,15 @@ class DocumentsController extends Controller
             $document->name = $req->input('name');
             $document->section = $req->input('docs_section');
 
-            $allowExtensions = ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'rtf', 'txt', 'odt'];;
-            $path = public_path() . '/uploads/documents/' . $req['docs_section'] . '/';
+            $allowExtensions = ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'rtf', 'txt', 'odt'];
+            $inPublicPath = '/uploads/documents/' . $req['docs_section'] . '/';
+            $path = public_path() . $inPublicPath;
             $file = $req->file('document');
             $fileName = time() . $file->getClientOriginalName();
             $extension = $file->extension();
             if (in_array($extension, $allowExtensions)) {
                 $file->move($path, $fileName);
-                $document->doc_path = $path . $fileName;
+                $document->doc_path = $inPublicPath . $fileName;
                 $document->save();
                 return
                     $result = redirect()->route('admin_docs')->with('success', 'Данные были добавлены');
@@ -31,6 +32,7 @@ class DocumentsController extends Controller
         } else {
             return $result = 'Документ не прикреплен';
         }
+        //dd(phpinfo())
     }
     public function showDocsAdmin()
     {
@@ -42,8 +44,15 @@ class DocumentsController extends Controller
     {
         $document = Documents::find($id);
         $path = $document->doc_path;
-        unlink($path);
+        unlink(public_path($path));
         $document->delete();
         return redirect()->route('admin_docs')->with('success', 'Данные удалены');
     }
+    public function getDocuments($section)
+    {
+        //dd(News::all());
+        $document = new Documents();
+        return view('documents', ['data'=> $document->where('section', $section)->orderBy('created_at', 'desc')->get()]);
+    }
+
 }

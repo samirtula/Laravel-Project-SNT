@@ -39,19 +39,38 @@
     <section class="documents">
         <div class="documents__wrapper">
             <h2>документы</h2>
-            <div class="documents__menu-block"><a class="documents__menu-block-link-wrapper" href="documents.php">
-                    <div class="documents__menu-block-link-inner"><span>Документы</span></div>
-                </a><a class="documents__menu-block-link-wrapper" href="documents.php">
-                    <div class="documents__menu-block-link-inner"><span>Бланки документов</span></div>
-                </a><a class="documents__menu-block-link-wrapper" href="documents.php">
-                    <div class="documents__menu-block-link-inner"><span>Законодательство</span></div>
-                </a><a class="documents__menu-block-link-wrapper" href="documents.php">
-                    <div class="documents__menu-block-link-inner"><span>Работа правления</span></div>
-                </a><a class="documents__menu-block-link-wrapper" href="documents.php">
-                    <div class="documents__menu-block-link-inner"><span>Благоустройство</span></div>
-                </a><a class="documents__menu-block-link-wrapper" href="documents.php">
-                    <div class="documents__menu-block-link-inner"><span>Услуги</span></div>
-                </a></div>
+            <div class="documents__menu-block">
+                <a class="documents__menu-block-link-wrapper" href="{{route('get_documents', 'documents')}}">
+                    <div class="documents__menu-block-link-inner">
+                        <span>Документы</span>
+                    </div>
+                </a>
+                <a class="documents__menu-block-link-wrapper" href="{{route('get_documents', 'blanks')}}">
+                    <div class="documents__menu-block-link-inner">
+                        <span>Бланки документов</span>
+                    </div>
+                </a>
+                <a class="documents__menu-block-link-wrapper" href="{{route('get_documents', 'legislation')}}">
+                    <div class="documents__menu-block-link-inner">
+                        <span>Законодательство</span>
+                    </div>
+                </a>
+                <a class="documents__menu-block-link-wrapper" href="{{route('get_documents', 'management')}}">
+                    <div class="documents__menu-block-link-inner">
+                        <span>Работа правления</span>
+                    </div>
+                </a>
+                <a class="documents__menu-block-link-wrapper" href="{{route('get_documents', 'improvement')}}">
+                    <div class="documents__menu-block-link-inner">
+                        <span>Благоустройство</span>
+                    </div>
+                </a>
+                <a class="documents__menu-block-link-wrapper" href="{{route('get_documents', 'services')}}">
+                    <div class="documents__menu-block-link-inner">
+                        <span>Услуги</span>
+                    </div>
+                </a>
+            </div>
         </div>
     </section>
     <section class="payment">
