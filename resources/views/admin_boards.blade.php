@@ -1,0 +1,68 @@
+@extends('layouts/admin_nav')
+@section('content')
+
+    <section id="main-content" class="column column-offset-20">
+        @include('inc.messages')
+        <h5 class="mt-2">Добавить объявление</h5>
+        <div class="row grid-responsive">
+            <div class="column ">
+                <div class="card">
+                    <div class="card-title">
+                        <h3>Заполните поля для добавления объявления </h3>
+                    </div>
+                    <div class="card-block">
+                        <form action="{{route('add_board')}}" method="post"  style="display: flex; flex-direction: column" class="forms " enctype="multipart/form-data">
+                            @csrf()
+                            <input type="text" class='req' name='header' placeholder="Введите заголовок">
+                            <input type="text" class='req' name='keyword' placeholder="Введите ключевое слово">
+                            <textarea type="text" class='req' name='text' placeholder="Введите текст объявления"></textarea>
+                            <input type="file" class='custom-file-input' name='image'>
+                            <input type="submit" value="Добавить" style="width: 290px">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h5 class="mt-2">Таблица объявлений</h5>
+        <a class="anchor" name="tables_boards"></a>
+        <div class="row grid-responsive">
+            <div class="column ">
+                <div class="card">
+                    <div class="card-title">
+                        <h3>Список объявлений</h3>
+                    </div>
+                    <div class="card-block">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Дата</th>
+                                <th>Заголовок</th>
+                                <th>Ключевое слово</th>
+                                <th>Изменить</th>
+                                <th>Удалить</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($data as $item)
+                                <tr>
+                                    <td>{{substr($item->created_at, 0, -3)}}</td>
+                                    <td>{{$item->header}}</td>
+                                    <td>{{$item->keyword}}</td>
+                                    <td>
+                                        <a href="{{route('admin_boards_update', $item->id)}}" class="button">Изменить</a>
+                                    </td>
+                                    <td>
+                                        <a href="{{route('admin_boards_delete', $item->id)}}" class="button button_red">Удалить</a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+@stop
+
