@@ -2,11 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-
-Route::get('/', function () {
-    return view('index');
-})->name('index');
-
 Route::get('/news/', function () {
     return view('news');
 })->name('news');
@@ -95,6 +90,20 @@ Route::get('/admin_news_delete{id}/', 'App\Http\Controllers\NewsController@admin
 Route::get('/admin_boards_delete{id}/', 'App\Http\Controllers\BoardsController@adminBoardsDelete')->name('admin_boards_delete');
 
 Route::get('/admin_docs_delete{id}/', 'App\Http\Controllers\DocumentsController@adminDocsDelete')->name('admin_docs_delete');
+
+Route::get('/admin_images_delete{id}/', 'App\Http\Controllers\ImagesController@adminImagesDelete')->name('admin_images_delete');
+
+Route::post('/add_message/', 'App\Http\Controllers\MessageController@addMainMessage')->name('add_message');
+
+Route::get('/admin/', 'App\Http\Controllers\MessageController@showMessagesAdmin')->name('admin');
+
+Route::get('/admin_update{id}/', 'App\Http\Controllers\MessageController@adminUpdate')->name('admin_update');
+
+Route::post('/admin_update{id}/', 'App\Http\Controllers\MessageController@adminUpdateSave')->name('admin_update_save');
+
+Route::get('/admin_delete{id}/', 'App\Http\Controllers\MessageController@adminDelete')->name('admin_delete');
+
+Route::get('/', 'App\Http\Controllers\MessageController@showMessagesPublic')->name('index');
 
 
 

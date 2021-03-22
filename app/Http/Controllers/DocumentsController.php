@@ -24,7 +24,7 @@ class DocumentsController extends Controller
                 $document->doc_path = $path . $fileName;
                 $document->save();
                 return
-                    $result = redirect()->route('admin')->with('success', 'Данные были добавлены');
+                    $result = redirect()->route('admin_docs')->with('success', 'Данные были добавлены');
             } else {
                 return $result = 'Некорректный формат файла';
             }
@@ -40,7 +40,10 @@ class DocumentsController extends Controller
     }
     public function adminDocsDelete($id)
     {
-        Documents::find($id)->delete();
+        $document = Documents::find($id);
+        $path = $document->doc_path;
+        unlink($path);
+        $document->delete();
         return redirect()->route('admin_docs')->with('success', 'Данные удалены');
     }
 }

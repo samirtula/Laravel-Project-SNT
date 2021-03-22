@@ -25,7 +25,6 @@
         </div>
 
         <h5 class="mt-2">Таблица объявлений</h5>
-        <a class="anchor" name="tables_boards"></a>
         <div class="row grid-responsive">
             <div class="column ">
                 <div class="card">

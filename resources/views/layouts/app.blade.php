@@ -15,7 +15,15 @@
     <div class="header__wrapper">
         <div class="header__meet">
             <div class="header__meet-clock-image"></div>
-            @include('inc.meeting_date')
+            <span class="header__meet-text">
+                @empty($meeting)
+                    Дата общего собрания не определена
+                @endempty
+
+                @isset($meeting)
+                    {{$meeting->text}}
+                @endisset
+            </span>
         </div>
         <div class="header__tel">
             <div class="header__tel-phone-image"></div>

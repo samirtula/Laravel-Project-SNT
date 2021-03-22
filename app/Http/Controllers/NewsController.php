@@ -101,9 +101,12 @@ class NewsController extends Controller
     public function adminNewsDelete($id)
     {
         $new = (News::find($id));
-        $path = $new->img_path;
+        if ($new->img_path != 'No') {
+            $path = $new->img_path;
+            unlink(public_path($path));
+        }
+
         $new->delete();
-        unlink(public_path($path));
         return redirect()->route('admin_news')->with('success', 'Данные удалены');
 
     }

@@ -45,7 +45,9 @@
                                 <tr>
                                     <td>{{substr($item->created_at, 0, -3)}}</td>
                                     <td>{{$item->description}}</td>
-                                    <td><a href="{{route('news-one', $item->id)}}" class="button button_red">X</a></td>
+                                    <td>
+                                        <a href="{{route('admin_images_delete', $item->id)}}" class="button button_red">Удалить</a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

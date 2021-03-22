@@ -14,7 +14,7 @@ class ImagesController extends Controller
             $img = new Images();
             $img->description = $req->input('keyword');
             $allowExtensions = ['jpg', 'jpeg', 'png'];
-            $inPublicPath =  '/uploads/gallery/';
+            $inPublicPath = '/uploads/gallery/';
             $path = public_path() . $inPublicPath;
             $picture = $req->file('image');
             $fileName = (md5(date('Y-m-d H:i:s')));
@@ -24,7 +24,7 @@ class ImagesController extends Controller
                 $picture->move($path, $fileName . '.' . $extension);
                 $img->img_path = $inPublicPath . $fileName . '.' . $extension;
                 $img->save();
-                $result = redirect()->route('admin')->with('success', 'Данные были добавлены');
+                $result = redirect()->route('admin_images')->with('success', 'Данные были добавлены');
             } else {
                 $result = 'Некорректный формат файла';
             }
@@ -34,15 +34,29 @@ class ImagesController extends Controller
         }
         return $result;
     }
+
     public function showImages()
     {
         //dd(Images::all());
-        return view('gallery', ['data'=> Images::all()]);
+        return view('gallery', ['data' => Images::all()]);
     }
+
     public function showImagesAdmin()
     {
         //dd(News::all());
         $img = new Images();
-        return view('admin_images', ['data'=> $img->orderBy('created_at', 'desc')->get()]);
+        return view('admin_images', ['data' => $img->orderBy('created_at', 'desc')->get()]);
+    }
+
+    public function adminImagesDelete($id)
+    {
+        $img = (Images::find($id));
+
+        $path = $img->img_path;
+        unlink(public_path($path));
+
+        $img->delete();
+
+        return redirect()->route('admin_images')->with('success', 'Данные удалены');
     }
 }

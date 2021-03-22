@@ -154,19 +154,19 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\resources\views" />
-      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\public\js" />
-      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\resources\js" />
-      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\resources\css" />
-      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\public\css" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\public\js" />
       <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\public\css" />
       <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\public" />
       <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\resources\js" />
       <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\app" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\resources\views" />
+      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\public\js" />
+      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\resources\js" />
+      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\resources\css" />
+      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\public\css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -209,6 +209,7 @@
       <workItem from="1616155415318" duration="36680000" />
       <workItem from="1616244182395" duration="36336000" />
       <workItem from="1616334012343" duration="35180000" />
+      <workItem from="1616412021532" duration="11173000" />
     </task>
     <servers />
   </component>
