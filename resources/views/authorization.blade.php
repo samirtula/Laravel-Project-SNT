@@ -35,20 +35,21 @@
             <div class="private-forms__registration registration">
 
                 <h3 class="title">Регистрация нового пользователя</h3>
-                <form action="{{route('registration')}}" method="post"  id='registration' class="forms">
+                <form action="{{route('register')}}" method="post"  id='registration' class="forms">
                     @csrf()
-                    <input type="text" class='req' name='name' placeholder="Введите имя">
+                    <input type="text" class='req' name='name'  placeholder="Введите имя">
                     <input type="text" class='req' name='second_name' placeholder="Введите отчество">
                     <input type="text" class='req' name='last_name' placeholder="Введите фамилию">
                     <input type="email"  class='req email' name='email' placeholder="Введите Email">
                     <input type="tel" class='req tel' name='telephone' placeholder="Введите номер телефона">
+                    <input type="text" class='req' name='plot' placeholder="Номер участка">
                     <input type="password" class='req password' name='password' placeholder="Придумайте пароль(от 6 символов)">
-                    <input type="password" class='req confirm' name='confirm' placeholder="Повторите пароль">
+                    <input type="password" class='req confirm' name='password_confirmation'  placeholder="Повторите пароль">
                     <input class="login__form-button" type="submit" value="Зарегистрироваться">
                 </form>
 
             </div>
         </div>
     </section>
- <script src="/js/validator.js"></script>
+ {{--<script src="/js/validator.js"></script>--}}
 @stop

@@ -15,7 +15,7 @@ class MessageController extends Controller
         $message->type = $req->input('type');
 
         $message->save();
-        return redirect()->route('admin');
+        return redirect()->route('admin.admin');
 
     }
 
@@ -23,7 +23,7 @@ class MessageController extends Controller
     {
         //dd(News::all());
         $message = new MainMessage();
-        return view('admin', ['data' => $message->orderBy('created_at', 'desc')->get()]);
+        return view('admin.admin', ['data' => $message->orderBy('created_at', 'desc')->get()]);
     }
 
     public function showMessagesPublic()
@@ -36,7 +36,7 @@ class MessageController extends Controller
     public function adminUpdate($id)
     {
         $message = new MainMessage;
-        return view('admin_update', ['data' => $message->find($id)]);
+        return view('admin.admin_update', ['data' => $message->find($id)]);
     }
 
     public function adminUpdateSave($id, Request $req)
@@ -45,7 +45,7 @@ class MessageController extends Controller
         $message->header = $req->input('header');
         $message->text = $req->input('text');
         $message->save();
-        return redirect()->route('admin')->with('success', 'Данные изменены');
+        return redirect()->route('admin.admin')->with('success', 'Данные изменены');
 
     }
     public function adminDelete($id)
@@ -53,6 +53,6 @@ class MessageController extends Controller
         $message = (MainMessage::find($id));
         $message->delete();
 
-        return redirect()->route('admin')->with('success', 'Данные удалены');
+        return redirect()->route('admin.admin')->with('success', 'Данные удалены');
     }
 }

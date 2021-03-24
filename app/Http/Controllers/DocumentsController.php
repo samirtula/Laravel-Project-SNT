@@ -38,7 +38,7 @@ class DocumentsController extends Controller
     {
         //dd(News::all());
         $document = new Documents();
-        return view('admin_docs', ['data'=> $document->orderBy('created_at', 'desc')->get()]);
+        return view('admin.admin_docs', ['data'=> $document->orderBy('created_at', 'desc')->get()]);
     }
     public function adminDocsDelete($id)
     {

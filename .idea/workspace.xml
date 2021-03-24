@@ -1,7 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0769a12a-41a7-42b6-8f02-4e0349db3c5e" name="Default Changelist" comment="" />
+    <list default="true" id="0769a12a-41a7-42b6-8f02-4e0349db3c5e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Actions/Fortify/PasswordValidationRules.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Actions/Fortify/ResetUserPassword.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Actions/Fortify/UpdateUserPassword.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Actions/Fortify/UpdateUserProfileInformation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Providers/FortifyServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/fortify.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_200000_add_two_factor_columns_to_users_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/documents/documents/1616595264Artisan.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/news/047aa0155d829449a97184c1522fb5a6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sntlaravel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sntlaravel.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BoardsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BoardsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DocumentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DocumentsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ImagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ImagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RegistrationController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Admin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cache/weather-data.cache" beforeDir="false" afterPath="$PROJECT_DIR$/public/cache/weather-data.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin_boards.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin_boards.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin_boards_update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin_boards_update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin_docs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin_docs.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin_images.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin_images.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin_news.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin_news.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin_news_update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin_news_update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin_update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin_update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin_users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin_users.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/authorization.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/authorization.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/user.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user_energy.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/user_energy.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user_water.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/user_water.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +78,9 @@
         <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -144,29 +191,39 @@
       <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
       <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
       <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/vendor/dasprid/enum" />
+      <path value="$PROJECT_DIR$/vendor/pragmarx/google2fa" />
+      <path value="$PROJECT_DIR$/vendor/laravel/fortify" />
     </include_path>
   </component>
   <component name="ProjectId" id="1psoZap39hKVMzuCeg4Kze93u0r" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\public\js" />
-      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\public\css" />
-      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\public" />
-      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\resources\js" />
-      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\app" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\resources\views" />
       <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\public\js" />
       <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\resources\js" />
       <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\resources\css" />
       <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\public\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\resources\views\users" />
+      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\resources\views\admin" />
+      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\public\js" />
+      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\public\css" />
+      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\public" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -210,10 +267,28 @@
       <workItem from="1616244182395" duration="36336000" />
       <workItem from="1616334012343" duration="35180000" />
       <workItem from="1616412021532" duration="16856000" />
+      <workItem from="1616554727644" duration="2291000" />
+      <workItem from="1616583056917" duration="14551000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

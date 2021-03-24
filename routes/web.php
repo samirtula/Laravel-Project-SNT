@@ -2,14 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/news/', function () {
-    return view('news');
-})->name('news');
-
-Route::get('/board/', function () {
-    return view('boards');
-})->name('boards');
-
 Route::get('/gallery/', function () {
     return view('gallery');
 })->name('gallery');
@@ -34,16 +26,10 @@ Route::get('/forum/', function () {
     return view('forum');
 })->name('forum');
 
-Route::get('/admin/', function () {
-    return view('admin');
-})->name('admin');
-
 Route::get('/user/', function () {
-    return view('user');
-
+    return view('users.user');
 })->name('user');
 
-Route::post('/registration/form', 'App\Http\Controllers\UserController@registration')->name('registration');
 
 Route::post('/authorization/form', 'App\Http\Controllers\UserController@authorization')->name('check');
 
@@ -65,7 +51,7 @@ Route::get('/news{id}/', 'App\Http\Controllers\NewsController@showOneNew')->name
 
 Route::get('/boards{id}/', 'App\Http\Controllers\BoardsController@showOneBoard')->name('boards-one');
 
-Route::get('/admin_users/', 'App\Http\Controllers\AdminController@showUsers')->name('admin_users');
+Route::get('/admin_users/', 'App\Http\Controllers\UserController@showUsers')->name('admin_users');
 
 Route::get('/admin_news/', 'App\Http\Controllers\NewsController@showNewsAdmin')->name('admin_news');
 

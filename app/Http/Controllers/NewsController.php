@@ -57,13 +57,13 @@ class NewsController extends Controller
     {
         //dd(News::all());
         $new = new News;
-        return view('admin_news', ['data' => $new->orderBy('created_at', 'desc')->get()]);
+        return view('admin.admin_news', ['data' => $new->orderBy('created_at', 'desc')->get()]);
     }
 
     public function adminNewsUpdate($id)
     {
         $new = new News;
-        return view('admin_news_update', ['data' => $new->find($id)]);
+        return view('admin.admin_news_update', ['data' => $new->find($id)]);
     }
 
     public function adminNewsUpdateSave($id, Request $req)

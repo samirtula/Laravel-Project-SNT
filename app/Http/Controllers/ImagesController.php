@@ -45,7 +45,7 @@ class ImagesController extends Controller
     {
         //dd(News::all());
         $img = new Images();
-        return view('admin_images', ['data' => $img->orderBy('created_at', 'desc')->get()]);
+        return view('admin.admin_images', ['data' => $img->orderBy('created_at', 'desc')->get()]);
     }
 
     public function adminImagesDelete($id)

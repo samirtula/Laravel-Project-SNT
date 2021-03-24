@@ -56,13 +56,13 @@ class BoardsController extends Controller
     {
         //dd(News::all());
         $board = new Boards();
-        return view('admin_boards', ['data' => $board->orderBy('created_at', 'desc')->get()]);
+        return view('admin.admin_boards', ['data' => $board->orderBy('created_at', 'desc')->get()]);
     }
 
     public function adminBoardsUpdate($id)
     {
         $board = new Boards;
-        return view('admin_boards_update', ['data' => $board->find($id)]);
+        return view('admin.admin_boards_update', ['data' => $board->find($id)]);
     }
 
     public function adminBoardsUpdateSave($id, Request $req)
