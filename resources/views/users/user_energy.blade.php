@@ -2,8 +2,8 @@
 @section('content')
 
     <section id="main-content" class="column column-offset-20">
+        @include('inc.messages')
         <h5 class="mt-2">Добавить показание счетчика электроэнергии</h5>
-        <a href="" class="anchor" name="form_add_energy"></a>
         <div class="row grid-responsive">
             <div class="column ">
                 <div class="card">

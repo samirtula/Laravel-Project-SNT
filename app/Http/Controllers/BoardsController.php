@@ -27,14 +27,18 @@ class BoardsController extends Controller
                 $picture->move($path, $fileName . '.' . $extension);
                 $board->img_path = $inPublicPath . $fileName . '.' . $extension;
                 $board->save();
-                $result = redirect()->route('admin_boards')->with('success', 'Данные добавлены');
+                $result = redirect()
+                    ->route('admin_boards')
+                    ->with('success', 'Данные добавлены');
             } else {
                 $result = 'Некорректный формат файла';
             }
 
         } else {
             $board->save();
-            $result = redirect()->route('admin_boards')->with('success', 'Данные добавлены');
+            $result = redirect()
+                ->route('admin_boards')
+                ->with('success', 'Данные добавлены');
         }
         return $result;
     }
@@ -43,26 +47,31 @@ class BoardsController extends Controller
     {
         // dd(Boards::all());
         $board = new Boards;
-        return view('boards', ['data' => $board->orderBy('created_at', 'desc')->get()]);
+        return view('boards', ['data' => $board
+            ->orderBy('created_at', 'desc')
+            ->get()]);
     }
 
     public function showOneBoard($id)
     {
         $board = new Boards();
-        return view('board', ['data' => $board->find($id)]);
+        return view('board', ['data' => $board
+            ->find($id)]);
     }
 
     public function showBoardsAdmin()
     {
         //dd(News::all());
         $board = new Boards();
-        return view('admin.admin_boards', ['data' => $board->orderBy('created_at', 'desc')->get()]);
+        return view('admin.admin_boards', ['data' => $board
+            ->orderBy('created_at', 'desc')->get()]);
     }
 
     public function adminBoardsUpdate($id)
     {
         $board = new Boards;
-        return view('admin.admin_boards_update', ['data' => $board->find($id)]);
+        return view('admin.admin_boards_update', ['data' => $board
+            ->find($id)]);
     }
 
     public function adminBoardsUpdateSave($id, Request $req)
@@ -85,14 +94,18 @@ class BoardsController extends Controller
                 $picture->move($path, $fileName . '.' . $extension);
                 $board->img_path = $inPublicPath . $fileName . '.' . $extension;
                 $board->save();
-                $result = redirect()->route('admin_boards')->with('success', 'Данные изменены');
+                $result = redirect()
+                    ->route('admin_boards')
+                    ->with('success', 'Данные изменены');
             } else {
                 $result = 'Некорректный формат файла';
             }
 
         } else {
             $board->save();
-            $result = redirect()->route('admin_boards')->with('success', 'Данные изменены');
+            $result = redirect()
+                ->route('admin_boards')
+                ->with('success', 'Данные изменены');
         }
         return $result;
     }
@@ -107,6 +120,7 @@ class BoardsController extends Controller
 
         $board->delete();
 
-        return redirect()->route('admin_boards')->with('success', 'Данные удалены');
+        return redirect()->route('admin_boards')
+            ->with('success', 'Данные удалены');
     }
 }

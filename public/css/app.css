@@ -4010,7 +4010,10 @@ label input[type=checkbox] {
 #snt form input[type=submit].logout__button {
     margin-top: 10px
 }
-
+#snt .warning {
+    color: red;
+    font-size: 14px;
+}
 
 
 

@@ -33,6 +33,7 @@ class CreateNewUser implements CreatesNewUsers
             'second_name' => 'required',
             'last_name' => 'required',
             'telephone' => 'required|numeric',
+            'plot'=> ['required', Rule::unique(User::class)],
         ])->validate();
 
         return User::create([

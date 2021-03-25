@@ -22,7 +22,7 @@
         <div class="column column-30">
             <div class="user-section">
                 <div class="username">
-                    <h4>Jane Donovan</h4>
+                    <h4>{{--{{Auth::user()->name}} {{Auth::user()->last_name}}--}}</h4>
                     <p>Администратор</p>
                 </div>
             </div>
@@ -40,6 +40,10 @@
             <li><a href="{{route("admin_docs")}}"><em class="fa fa-pencil-square-o"></em>Документы</a></li>
             <li><a href="{{route("admin_images")}}"><em class="fa fa-pencil-square-o"></em>Фотогалерея</a></li>
             <li><a href=""><em class="fa fa-table"></em> Показания счетчиков</a></li>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                @csrf
+                <input type="submit" value="Выйти" style="margin-left: 20px">
+            </form>
         </ul>
     </div>
 

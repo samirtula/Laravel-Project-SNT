@@ -24,7 +24,9 @@ class ImagesController extends Controller
                 $picture->move($path, $fileName . '.' . $extension);
                 $img->img_path = $inPublicPath . $fileName . '.' . $extension;
                 $img->save();
-                $result = redirect()->route('admin_images')->with('success', 'Данные были добавлены');
+                $result = redirect()
+                    ->route('admin_images')
+                    ->with('success', 'Данные были добавлены');
             } else {
                 $result = 'Некорректный формат файла';
             }
@@ -37,15 +39,15 @@ class ImagesController extends Controller
 
     public function showImages()
     {
-        //dd(Images::all());
         return view('gallery', ['data' => Images::all()]);
     }
 
     public function showImagesAdmin()
     {
-        //dd(News::all());
         $img = new Images();
-        return view('admin.admin_images', ['data' => $img->orderBy('created_at', 'desc')->get()]);
+        return view('admin.admin_images', ['data' => $img
+            ->orderBy('created_at', 'desc')
+            ->get()]);
     }
 
     public function adminImagesDelete($id)
@@ -57,6 +59,8 @@ class ImagesController extends Controller
 
         $img->delete();
 
-        return redirect()->route('admin_images')->with('success', 'Данные удалены');
+        return redirect()
+            ->route('admin_images')
+            ->with('success', 'Данные удалены');
     }
 }

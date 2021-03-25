@@ -22,7 +22,7 @@
         <div class="column column-30">
             <div class="user-section">
                 <div class="username">
-                    <h4>Jane Donovan</h4>
+                    <h4>{{Auth::user()->name}} {{Auth::user()->last_name}}</h4>
                     <p>Пользователь</p>
                 </div>
             </div>
@@ -33,11 +33,23 @@
     <div id="sidebar" class="column">
         <h5>Навигация</h5>
         <ul>
-            <li><a href="#"><em class="fa fa-home"></em> Вверх</a></li>
-            <li><a href="#form_add_water"><em class="fa fa-pencil-square-o"></em> Добавить показания счетчика воды</a>
+            <li>
+                <a href="#"><em class="fa fa-home"></em> Вверх</a>
             </li>
-            <li><a href="#form_add_energy"><em class="fa fa-pencil-square-o"></em> Добавить показания счетчика
-                    электроэнергии</a></li>
+            <li>
+                <a href="#form_add_water"><em class="fa fa-pencil-square-o"></em> Добавить показания счетчика воды</a>
+            </li>
+            <li>
+                <a href="#form_add_energy"><em class="fa fa-pencil-square-o"></em> Добавить показания счетчика
+                    электроэнергии</a>
+            </li>
+            <li>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <input type="submit" value="Выйти" style="margin-left: 20px">
+                </form>
+            </li>
         </ul>
     </div>
 

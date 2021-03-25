@@ -42,9 +42,9 @@
                                 <th>Фамилия</th>
                                 <th>Имя</th>
                                 <th>Отчество</th>
+                                <th>Участок</th>
                                 <th>Телефон</th>
                                 <th>Email</th>
-                                <th>Изменить</th>
                                 <th>Удалить</th>
                             </tr>
                             </thead>
@@ -55,10 +55,10 @@
                                     <td>{{$item->name}}</td>
                                     <td>{{$item->second_name}}</td>
                                     <td>{{$item->last_name}}</td>
+                                    <td>{{$item->plot}}</td>
                                     <td>{{$item->telephone}}</td>
                                     <td>{{$item->email}}</td>
-                                    <td><a href="{{route('news-one', $item->id)}}" class="button">X</a></td>
-                                    <td><a href="{{route('news-one', $item->id)}}" class="button button_red">X</a></td>
+                                    <td><a href="{{route('delete_user', $item->id)}}" class="button button_red">удалить</a></td>
                                 </tr>
                             @endforeach
                             </tbody>

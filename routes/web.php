@@ -10,10 +10,6 @@ Route::get('/weather/', function () {
     return view('weather');
 })->name('weather');
 
-Route::get('/personal/', function () {
-    return view('personal');
-})->name('personal');
-
 Route::get('/letter/', function () {
     return view('letter');
 })->name('letter');
@@ -26,71 +22,105 @@ Route::get('/forum/', function () {
     return view('forum');
 })->name('forum');
 
-Route::get('/user/', function () {
-    return view('users.user');
-})->name('user');
+Route::post('/add_new/', 'App\Http\Controllers\NewsController@addNew')
+    ->name('add_new');
 
+Route::post('/add_board/', 'App\Http\Controllers\BoardsController@addBoard')
+    ->name('add_board');
 
-Route::post('/authorization/form', 'App\Http\Controllers\UserController@authorization')->name('check');
+Route::post('/add_document/', 'App\Http\Controllers\DocumentsController@addDocument')
+    ->name('add_document');
 
-Route::post('/add_new/', 'App\Http\Controllers\NewsController@addNew')->name('add_new');
+Route::post('/add_images/', 'App\Http\Controllers\ImagesController@addImage')
+    ->name('add_image');
 
-Route::post('/add_board/', 'App\Http\Controllers\BoardsController@addBoard')->name('add_board');
+Route::get('/gallery/', 'App\Http\Controllers\ImagesController@showImages')
+    ->name('gallery');
 
-Route::post('/add_document/', 'App\Http\Controllers\DocumentsController@addDocument')->name('add_document');
+Route::get('/news/', 'App\Http\Controllers\NewsController@showNews')
+    ->name('news');
 
-Route::post('/add_images/', 'App\Http\Controllers\ImagesController@addImage')->name('add_image');
+Route::get('/boards/', 'App\Http\Controllers\BoardsController@showBoards')
+    ->name('boards');
 
-Route::get('/gallery/', 'App\Http\Controllers\ImagesController@showImages')->name('gallery');
+Route::get('/news{id}/', 'App\Http\Controllers\NewsController@showOneNew')
+    ->name('news-one');
 
-Route::get('/news/', 'App\Http\Controllers\NewsController@showNews')->name('news');
+Route::get('/boards{id}/', 'App\Http\Controllers\BoardsController@showOneBoard')
+    ->name('boards-one');
 
-Route::get('/boards/', 'App\Http\Controllers\BoardsController@showBoards')->name('boards');
+Route::get('/admin_users/', 'App\Http\Controllers\UserController@showUsers')
+    ->name('admin_users');
 
-Route::get('/news{id}/', 'App\Http\Controllers\NewsController@showOneNew')->name('news-one');
+Route::get('/admin_news/', 'App\Http\Controllers\NewsController@showNewsAdmin')
+    ->name('admin_news');
 
-Route::get('/boards{id}/', 'App\Http\Controllers\BoardsController@showOneBoard')->name('boards-one');
+Route::get('/admin_boards/', 'App\Http\Controllers\BoardsController@showBoardsAdmin')
+    ->name('admin_boards');
 
-Route::get('/admin_users/', 'App\Http\Controllers\UserController@showUsers')->name('admin_users');
+Route::get('/admin_docs/', 'App\Http\Controllers\DocumentsController@showDocsAdmin')
+    ->name('admin_docs');
 
-Route::get('/admin_news/', 'App\Http\Controllers\NewsController@showNewsAdmin')->name('admin_news');
+Route::get('/admin_images/', 'App\Http\Controllers\ImagesController@showImagesAdmin')
+    ->name('admin_images');
 
-Route::get('/admin_boards/', 'App\Http\Controllers\BoardsController@showBoardsAdmin')->name('admin_boards');
+Route::get('/admin_users/', 'App\Http\Controllers\UserController@showUsersAdmin')
+    ->name('admin_users');
 
-Route::get('/admin_docs/', 'App\Http\Controllers\DocumentsController@showDocsAdmin')->name('admin_docs');
+Route::get('/admin_news_update{id}/', 'App\Http\Controllers\NewsController@adminNewsUpdate')
+    ->name('admin_news_update');
 
-Route::get('/admin_images/', 'App\Http\Controllers\ImagesController@showImagesAdmin')->name('admin_images');
+Route::post('/admin_news_update{id}/', 'App\Http\Controllers\NewsController@adminNewsUpdateSave')
+    ->name('admin_news_update_save');
 
-Route::get('/admin_users/', 'App\Http\Controllers\UserController@showUsersAdmin')->name('admin_users');
+Route::get('/admin_boards_update{id}/', 'App\Http\Controllers\BoardsController@adminBoardsUpdate')
+    ->name('admin_boards_update');
 
-Route::get('/admin_news_update{id}/', 'App\Http\Controllers\NewsController@adminNewsUpdate')->name('admin_news_update');
+Route::post('/admin_boards_update{id}/', 'App\Http\Controllers\BoardsController@adminBoardsUpdateSave')
+    ->name('admin_boards_update_save');
 
-Route::post('/admin_news_update{id}/', 'App\Http\Controllers\NewsController@adminNewsUpdateSave')->name('admin_news_update_save');
+Route::get('/admin_news_delete{id}/', 'App\Http\Controllers\NewsController@adminNewsDelete')
+    ->name('admin_news_delete');
 
-Route::get('/admin_boards_update{id}/', 'App\Http\Controllers\BoardsController@adminBoardsUpdate')->name('admin_boards_update');
+Route::get('/admin_boards_delete{id}/', 'App\Http\Controllers\BoardsController@adminBoardsDelete')
+    ->name('admin_boards_delete');
 
-Route::post('/admin_boards_update{id}/', 'App\Http\Controllers\BoardsController@adminBoardsUpdateSave')->name('admin_boards_update_save');
+Route::get('/admin_docs_delete{id}/', 'App\Http\Controllers\DocumentsController@adminDocsDelete')
+    ->name('admin_docs_delete');
 
-Route::get('/admin_news_delete{id}/', 'App\Http\Controllers\NewsController@adminNewsDelete')->name('admin_news_delete');
+Route::get('/admin_images_delete{id}/', 'App\Http\Controllers\ImagesController@adminImagesDelete')
+    ->name('admin_images_delete');
 
-Route::get('/admin_boards_delete{id}/', 'App\Http\Controllers\BoardsController@adminBoardsDelete')->name('admin_boards_delete');
+Route::post('/add_message/', 'App\Http\Controllers\MessageController@addMainMessage')
+    ->name('add_message');
 
-Route::get('/admin_docs_delete{id}/', 'App\Http\Controllers\DocumentsController@adminDocsDelete')->name('admin_docs_delete');
+Route::get('/admin/', 'App\Http\Controllers\MessageController@showMessagesAdmin')
+    ->name('admin');
 
-Route::get('/admin_images_delete{id}/', 'App\Http\Controllers\ImagesController@adminImagesDelete')->name('admin_images_delete');
+Route::get('/admin_update{id}/', 'App\Http\Controllers\MessageController@adminUpdate')
+    ->name('admin_update');
 
-Route::post('/add_message/', 'App\Http\Controllers\MessageController@addMainMessage')->name('add_message');
+Route::post('/admin_update{id}/', 'App\Http\Controllers\MessageController@adminUpdateSave')
+    ->name('admin_update_save');
 
-Route::get('/admin/', 'App\Http\Controllers\MessageController@showMessagesAdmin')->name('admin');
+Route::get('/admin_delete{id}/', 'App\Http\Controllers\MessageController@adminDelete')
+    ->name('admin_delete');
 
-Route::get('/admin_update{id}/', 'App\Http\Controllers\MessageController@adminUpdate')->name('admin_update');
+Route::get('/', 'App\Http\Controllers\MessageController@showMessagesPublic')
+    ->name('index');
 
-Route::post('/admin_update{id}/', 'App\Http\Controllers\MessageController@adminUpdateSave')->name('admin_update_save');
+Route::get('/get_documents/{section}', 'App\Http\Controllers\DocumentsController@getDocuments')
+    ->name('get_documents');
 
-Route::get('/admin_delete{id}/', 'App\Http\Controllers\MessageController@adminDelete')->name('admin_delete');
+Route::get('/delete_user{id}/', 'App\Http\Controllers\UserController@adminUserDelete')
+    ->name('delete_user');
 
-Route::get('/', 'App\Http\Controllers\MessageController@showMessagesPublic')->name('index');
+Route::get('/add_water/', 'App\Http\Controllers\UserController@userAddWater')
+    ->name('add_water');
 
-Route::get('/get_documents/{section}', 'App\Http\Controllers\DocumentsController@getDocuments')->name('get_documents');
+Route::get('/user/', 'App\Http\Controllers\UserController@showWaterIndications')
+    ->name('user')
+    ->middleware('auth');
+
 
 

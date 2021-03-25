@@ -40,24 +40,38 @@
         <div class="nav__logo-image"></div>
         <a href="{{route('index')}}">главная</a>
         <a href="{{route('news')}}">новости</a>
-        <a href="{{route('authorization')}}">личный кабинет</a>
+        @guest
+            <a href="{{route('authorization')}}">личный кабинет</a>
+        @else
+            <a href="{{route('user')}}">личный кабинет</a>
+        @endguest
         <a href="{{route('letter')}}">написать в правление</a>
         <a href="{{route('forum')}}">форум</a>
         <a href="{{route('boards')}}">объявления</a>
         <a href="{{route('gallery')}}">фотогалерея</a>
         <a href="{{route('weather')}}">погода</a>
+
         <div class="nav__burger-menu">
             <span></span>
         </div>
+
         <div class="footer__social-links">
-            <a class="footer__social-links-login" href="{{route('authorization')}}"></a>
+            @guest
+                <a class="footer__social-links-login" href="{{route('authorization')}}"></a>
+            @else
+                <a class="footer__social-links-login"  style="background-image: url(../images/layout/login-hover.svg);" href="{{route('user')}}"></a>
+            @endguest
         </div>
     </div>
     <div class="nav__burger-wrapper clicked">
         <div class="nav__burger-block">
             <a href="{{route('index')}}">главная</a>
             <a href="{{route('news')}}">новости</a>
-            <a href="{{route('authorization')}}">личный кабинет</a>
+            @guest
+                <a href="{{route('authorization')}}">личный кабинет</a>
+            @else
+                <a href="{{route('user')}}">личный кабинет</a>
+            @endguest
             <a href="{{route('letter')}}">написать в правление</a>
             <a href="{{route('forum')}}">форум</a>
             <a href="{{route('boards')}}">объявления</a>
@@ -72,14 +86,22 @@
         <div class="nav__logo-image"></div>
         <a href="{{route('index')}}">главная</a>
         <a href="{{route('news')}}">новости</a>
-        <a href="{{route('authorization')}}">личный кабинет</a>
+        @guest
+            <a href="{{route('authorization')}}">личный кабинет</a>
+        @else
+            <a href="{{route('user')}}">личный кабинет</a>
+        @endguest
         <a href="{{route('letter')}}">написать в правление</a>
         <a href="{{route('forum')}}">форум</a>
         <a href="{{route('boards')}}">объявления</a>
         <a href="{{route('gallery')}}">фотогалерея</a>
         <a href="{{route('weather')}}">погода</a>
         <div class="footer__social-links">
-            <a class="footer__social-links-login" href="{{route('authorization')}}"></a>
+            @guest
+                <a class="footer__social-links-login" href="{{route('authorization')}}"></a>
+            @else
+                <a class="footer__social-links-login"  style="background-image: url(../images/layout/login-hover.svg);" href="{{route('user')}}"></a>
+            @endguest
         </div>
     </div>
 </footer>
