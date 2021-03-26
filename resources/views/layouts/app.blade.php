@@ -40,11 +40,16 @@
         <div class="nav__logo-image"></div>
         <a href="{{route('index')}}">главная</a>
         <a href="{{route('news')}}">новости</a>
-        @guest
+        @guest()
             <a href="{{route('authorization')}}">личный кабинет</a>
         @else
-            <a href="{{route('user')}}">личный кабинет</a>
+            @if(Auth::user()->hasRole('admin'))
+                <a href="{{route('admin')}}">личный кабинет</a>
+            @elseif(Auth::user()->hasRole('user'))
+                <a href="{{route('user')}}">личный кабинет</a>
+            @endif
         @endguest
+
         <a href="{{route('letter')}}">написать в правление</a>
         <a href="{{route('forum')}}">форум</a>
         <a href="{{route('boards')}}">объявления</a>
@@ -56,13 +61,20 @@
         </div>
 
         <div class="footer__social-links">
-            @guest
+            @guest()
                 <a class="footer__social-links-login" href="{{route('authorization')}}"></a>
             @else
-                <a class="footer__social-links-login"  style="background-image: url(../images/layout/login-hover.svg);" href="{{route('user')}}"></a>
+                @if(Auth::user()->hasRole('admin'))
+                    <a class="footer__social-links-login"
+                       style="background-image: url(../images/layout/login-hover.svg);" href="{{route('admin')}}"></a>
+                @elseif(Auth::user()->hasRole('user'))
+                    <a class="footer__social-links-login"
+                       style="background-image: url(../images/layout/login-hover.svg);" href="{{route('user')}}"></a>
+                @endif
             @endguest
         </div>
     </div>
+
     <div class="nav__burger-wrapper clicked">
         <div class="nav__burger-block">
             <a href="{{route('index')}}">главная</a>
@@ -86,10 +98,14 @@
         <div class="nav__logo-image"></div>
         <a href="{{route('index')}}">главная</a>
         <a href="{{route('news')}}">новости</a>
-        @guest
+        @guest()
             <a href="{{route('authorization')}}">личный кабинет</a>
         @else
-            <a href="{{route('user')}}">личный кабинет</a>
+            @if(Auth::user()->hasRole('admin'))
+                <a href="{{route('admin')}}">личный кабинет</a>
+            @elseif(Auth::user()->hasRole('user'))
+                <a href="{{route('user')}}">личный кабинет</a>
+            @endif
         @endguest
         <a href="{{route('letter')}}">написать в правление</a>
         <a href="{{route('forum')}}">форум</a>
@@ -97,10 +113,16 @@
         <a href="{{route('gallery')}}">фотогалерея</a>
         <a href="{{route('weather')}}">погода</a>
         <div class="footer__social-links">
-            @guest
+            @guest()
                 <a class="footer__social-links-login" href="{{route('authorization')}}"></a>
             @else
-                <a class="footer__social-links-login"  style="background-image: url(../images/layout/login-hover.svg);" href="{{route('user')}}"></a>
+                @if(Auth::user()->hasRole('admin'))
+                    <a class="footer__social-links-login"
+                       style="background-image: url(../images/layout/login-hover.svg);" href="{{route('admin')}}"></a>
+                @elseif(Auth::user()->hasRole('user'))
+                    <a class="footer__social-links-login"
+                       style="background-image: url(../images/layout/login-hover.svg);" href="{{route('user')}}"></a>
+                @endif
             @endguest
         </div>
     </div>

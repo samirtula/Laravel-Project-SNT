@@ -11,10 +11,11 @@
                         <h3>Введите показание счетчика электроэнергии</h3>
                     </div>
                     <div class="card-block">
-                        <form action="{{('ХХ')}}" method="post" style="display: flex; flex-direction: column"
+                        <form action="{{('add_energy')}}" method="get" style="display: flex; flex-direction: column"
                               class="forms">
                             @csrf()
-                            <input type="text" class='req' name='header' placeholder="Электроэнергия">
+                            <input type="text" class='req' name='value' placeholder="Электроэнергия">
+                            <input type="hidden" value="Энергия" class='req' name='type'>
                             <input type="submit" value="Добавить" style="width: 290px">
                         </form>
                     </div>
@@ -35,29 +36,31 @@
                                 <th>Дата</th>
                                 <th>Фамилия</th>
                                 <th>Имя</th>
-                                <th>Отчество</th>
                                 <th>Тип</th>
+                                <th>Участок</th>
                                 <th>Показание</th>
+                                <th>Изменить</th>
+                                <th>Удалить</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>Jane Donovan</td>
-                                <td>UI Developer</td>
-                                <td>23</td>
-                                <td>Philadelphia, PA</td>
-                                <td>Jane Donovan</td>
-                                <td>123456</td>
-
-                            </tr>
-                            <tr>
-                                <td>Jane Donovan</td>
-                                <td>UI Developer</td>
-                                <td>23</td>
-                                <td>Philadelphia, PA</td>
-                                <td>Jane Donovan</td>
-                                <td>123456</td>
-                            </tr>
+                            @foreach($data as $item)
+                                <tr>
+                                    <td>{{substr($item->created_at, 0, -3)}}</td>
+                                    <td>{{$item->last_name}}</td>
+                                    <td>{{$item->name}}</td>
+                                    <td>{{$item->type}}</td>
+                                    <td>{{$item->plot}}</td>
+                                    <td>{{$item->value}}</td>
+                                    <td>
+                                        <a href="{{route('energy_indication_update', $item->id)}}" class="button">Изменить</a>
+                                    </td>
+                                    <td>
+                                        <a href="{{route('energy_indication_delete', $item->id)}}"
+                                           class="button button_red">Удалить</a>
+                                    </td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

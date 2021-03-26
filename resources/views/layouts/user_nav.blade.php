@@ -34,17 +34,13 @@
         <h5>Навигация</h5>
         <ul>
             <li>
-                <a href="#"><em class="fa fa-home"></em> Вверх</a>
+                <a href="{{route('user')}}"><em class="fa fa-pencil-square-o"></em> Добавить показания счетчика воды</a>
             </li>
             <li>
-                <a href="#form_add_water"><em class="fa fa-pencil-square-o"></em> Добавить показания счетчика воды</a>
-            </li>
-            <li>
-                <a href="#form_add_energy"><em class="fa fa-pencil-square-o"></em> Добавить показания счетчика
+                <a href="{{route('user_energy')}}"><em class="fa fa-pencil-square-o"></em> Добавить показания счетчика
                     электроэнергии</a>
             </li>
             <li>
-
                 <form id="logout-form" action="{{ route('logout') }}" method="POST">
                     @csrf
                     <input type="submit" value="Выйти" style="margin-left: 20px">
@@ -55,7 +51,6 @@
 
     @yield('content')
 
-    <p class="credit">HTML5 Admin Template by <a href="https://www.medialoot.com">Medialoot</a></p>
     </section>
 </div>
 <script src="js/validator.js"></script>

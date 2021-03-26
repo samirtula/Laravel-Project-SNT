@@ -39,7 +39,7 @@
             <li><a href="{{route("admin_boards")}}"><em class="fa fa-pencil-square-o"></em>Объявления</a></li>
             <li><a href="{{route("admin_docs")}}"><em class="fa fa-pencil-square-o"></em>Документы</a></li>
             <li><a href="{{route("admin_images")}}"><em class="fa fa-pencil-square-o"></em>Фотогалерея</a></li>
-            <li><a href=""><em class="fa fa-table"></em> Показания счетчиков</a></li>
+            <li><a href="{{route("admin_indications")}}"><em class="fa fa-table"></em> Показания счетчиков</a></li>
             <form id="logout-form" action="{{ route('logout') }}" method="POST">
                 @csrf
                 <input type="submit" value="Выйти" style="margin-left: 20px">
@@ -49,7 +49,6 @@
 
     @yield('content')
 
-    <p class="credit">HTML5 Admin Template by <a href="https://www.medialoot.com">Medialoot</a></p>
     </section>
 </div>
 <script src="js/validator.js"></script>

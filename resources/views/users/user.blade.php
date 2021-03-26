@@ -29,7 +29,7 @@
             <div class="column ">
                 <div class="card">
                     <div class="card-title">
-                        <h3>Показания счетчиков воды</h3>
+                        <h3>Показания счетчика воды</h3>
                     </div>
                     <div class="card-block">
                         <table>
@@ -55,10 +55,11 @@
                                     <td>{{$item->plot}}</td>
                                     <td>{{$item->value}}</td>
                                     <td>
-                                        <a href="{{--{{route('admin_boards_update', $item->id)}}--}}" class="button">Изменить</a>
+                                        <a href="{{route('water_indication_update', $item->id)}}" class="button">Изменить</a>
                                     </td>
                                     <td>
-                                        <a href="{{--{{route('admin_boards_delete', $item->id)}}--}}" class="button button_red">Удалить</a>
+                                        <a href="{{route('water_indication_delete', $item->id)}}"
+                                           class="button button_red">Удалить</a>
                                     </td>
                                 </tr>
                             @endforeach

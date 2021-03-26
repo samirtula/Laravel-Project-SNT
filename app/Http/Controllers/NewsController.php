@@ -55,7 +55,8 @@ class NewsController extends Controller
     public function showOneNew($id)
     {
         $new = new News;
-        return view('new', ['data' => $new->find($id)]);
+        return view('new', ['data' => $new
+            ->find($id)]);
     }
 
     public function showNewsAdmin()
@@ -69,7 +70,8 @@ class NewsController extends Controller
     public function adminNewsUpdate($id)
     {
         $new = new News;
-        return view('admin.admin_news_update', ['data' => $new->find($id)]);
+        return view('admin.admin_news_update', ['data' => $new
+            ->find($id)]);
     }
 
     public function adminNewsUpdateSave($id, Request $req)
@@ -110,13 +112,14 @@ class NewsController extends Controller
 
     public function adminNewsDelete($id)
     {
-        $new = (News::find($id));
-        if ($new->img_path != 'No') {
+        $new = News::find($id);
+        if (!empty($new->img_path)) {
             $path = $new->img_path;
             unlink(public_path($path));
         }
 
         $new->delete();
+
         return redirect()
             ->route('admin_news')
             ->with('success', 'Данные удалены');

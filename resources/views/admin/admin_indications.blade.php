@@ -3,39 +3,38 @@
 
     <section id="main-content" class="column column-offset-20">
         @include('inc.messages')
-
-        <h5 class="mt-2">Таблица пользователей</h5>
+        <h5 class="mt-2">История показаний</h5>
         <div class="row grid-responsive">
             <div class="column ">
                 <div class="card">
                     <div class="card-title">
-                        <h3>Список пользователей</h3>
+                        <h3>Показания счетчиков</h3>
                     </div>
                     <div class="card-block">
                         <table>
                             <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>Дата</th>
                                 <th>Фамилия</th>
                                 <th>Имя</th>
-                                <th>Отчество</th>
+                                <th>Тип</th>
                                 <th>Участок</th>
-                                <th>Телефон</th>
-                                <th>Email</th>
+                                <th>Показания</th>
                                 <th>Удалить</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($data as $item)
                                 <tr>
-                                    <td>{{$item->id}}</td>
-                                    <td>{{$item->name}}</td>
-                                    <td>{{$item->second_name}}</td>
+                                    <td>{{substr($item->created_at, 0, -3)}}</td>
                                     <td>{{$item->last_name}}</td>
+                                    <td>{{$item->name}}</td>
+                                    <td>{{$item->type}}</td>
                                     <td>{{$item->plot}}</td>
-                                    <td>{{$item->telephone}}</td>
-                                    <td>{{$item->email}}</td>
-                                    <td><a href="{{route('delete_user', $item->id)}}" class="button button_red">удалить</a></td>
+                                    <td>{{$item->value}}</td>
+                                    <td>
+                                        <a href="{{route('admin_indication_delete', $item->id)}}" class="button button_red">Удалить</a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -45,3 +44,4 @@
             </div>
         </div>
 @stop
+

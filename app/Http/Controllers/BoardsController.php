@@ -45,7 +45,6 @@ class BoardsController extends Controller
 
     public function showBoards()
     {
-        // dd(Boards::all());
         $board = new Boards;
         return view('boards', ['data' => $board
             ->orderBy('created_at', 'desc')
@@ -61,7 +60,6 @@ class BoardsController extends Controller
 
     public function showBoardsAdmin()
     {
-        //dd(News::all());
         $board = new Boards();
         return view('admin.admin_boards', ['data' => $board
             ->orderBy('created_at', 'desc')->get()]);
@@ -112,15 +110,16 @@ class BoardsController extends Controller
 
     public function adminBoardsDelete($id)
     {
-        $board = (Boards::find($id));
-        if ($board->img_path != 'No') {
+        $board = Boards::find($id);
+        if (!empty($board->img_path)) {
             $path = $board->img_path;
             unlink(public_path($path));
         }
 
         $board->delete();
 
-        return redirect()->route('admin_boards')
+        return redirect()
+            ->route('admin_boards')
             ->with('success', 'Данные удалены');
     }
 }

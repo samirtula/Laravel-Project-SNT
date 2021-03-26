@@ -44,7 +44,7 @@ class CreateNewUser implements CreatesNewUsers
             'plot' => $input['plot'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
-        ]);
+        ])->assignRole('user');
     }
 }
 
