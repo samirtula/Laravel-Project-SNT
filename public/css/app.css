@@ -77,6 +77,7 @@ pre {
 
 a {
     background-color: transparent;
+    font-family: Roboto Condensed;
 }
 
 /**
@@ -1491,7 +1492,7 @@ body.compensate-for-scrollbar {
 }
 
 #snt h3, #snt h4 {
-    font-family: Roboto Condensed;
+    font-family: Roboto;
     font-style: normal
 }
 
@@ -1525,7 +1526,7 @@ body.compensate-for-scrollbar {
 }
 
 #snt p {
-    font-family: Roboto Condensed;
+    font-family: Roboto;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -1537,6 +1538,7 @@ body.compensate-for-scrollbar {
     text-decoration: none;
     color: #333334;
     transition-duration: .1s
+
 }
 
 #snt form {
@@ -2196,7 +2198,7 @@ body.compensate-for-scrollbar {
 }
 
 #snt .payment-info {
-    font-family: Roboto Condensed;
+    font-family: Roboto;
     font-style: normal;
     font-weight: 400;
     display: flex;
@@ -2453,6 +2455,7 @@ body.compensate-for-scrollbar {
     margin: 0 auto;
     text-align: center
 }
+
 #snt .news__article {
     width: 312px;
     display: flex;
@@ -2464,6 +2467,7 @@ body.compensate-for-scrollbar {
     height: auto;
     overflow: hidden;
 }
+
 #snt .news__nav {
     max-width: 250px;
     min-width: 250px;
@@ -3026,6 +3030,7 @@ body.compensate-for-scrollbar {
 #snt .ad__text > h5 {
     margin: 15px 0
 }
+
 #snt .ad__text p {
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -3721,7 +3726,9 @@ label input[type=checkbox] {
     text-align: left;
     color: #000;
     border-collapse: collapse;
-    margin: 0 auto 35px
+    margin: 0 auto 35px;
+    width: 100%;
+
 }
 
 #snt .forum-discuss__table table thead {
@@ -3959,12 +3966,11 @@ label input[type=checkbox] {
     opacity: 1;
     visibility: visible
 }
-#snt .article__text {
-    justify-content: flex-end
-}
+
 #snt .article__image {
     height: 191px;
 }
+
 #snt .article__text p {
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -4011,7 +4017,23 @@ label input[type=checkbox] {
     margin-top: 10px
 }
 
+#snt .warning {
+    color: red;
+    font-size: 14px;
+}
 
+#snt .forum-delete-image {
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+}
+
+#snt .forum-delete-link {
+    display: flex;
+    width: 160px;
+    align-items: center;
+    margin-top: 10px;
+}
 
 
 

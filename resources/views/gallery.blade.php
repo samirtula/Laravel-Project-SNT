@@ -26,7 +26,7 @@
       </div>
     </section>
     <div class="popup">
-      <div class="popup__close-button"></div><img class="popup__image" src="images/letter/letter.jpg">
+      <div class="popup__close-button"></div><img class="popup__image" src="">
     </div>
 
     <script src="../js/gallery.js"></script>

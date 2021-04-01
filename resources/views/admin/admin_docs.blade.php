@@ -1,4 +1,4 @@
-@extends('layouts/admin_nav')
+@extends('layouts.admin_nav')
 @section('content')
 
     <section id="main-content" class="column column-offset-20">
@@ -16,12 +16,12 @@
                             <input type="text" class='req' name='name' placeholder="Введите наименнование документа">
                             <span style="font-weight: bold">Выберите тип документа</span>
                             <select required name="docs_section">
-                                <option value="documents">Документы</option>
-                                <option value="blanks">Бланки документов</option>
-                                <option value="legislation">Законодательство</option>
-                                <option value="management">Работа правления</option>
-                                <option value="improvement">Благоустройство</option>
-                                <option value="services">Услуги</option>
+                                <option value="Документы">Документы</option>
+                                <option value="Бланки">Бланки документов</option>
+                                <option value="Законодательство">Законодательство</option>
+                                <option value="Менеджмент">Работа правления</option>
+                                <option value="Благоустройство">Благоустройство</option>
+                                <option value="Услуги">Услуги</option>
                             </select>
                             <input type="file" class='custom-file-input_doc' name='document'>
                             <input type="submit" value="Добавить" style="width: 290px">
@@ -52,7 +52,7 @@
                             <tbody>
                             @foreach($data as $item)
                                 <tr>
-                                    <td>{{substr($item->created_at, 0, -3)}}</td>
+                                    <td>{{date("d.m.Y H:i", strtotime($item->created_at))}}</td>
                                     <td>{{$item->name}}</td>
                                     <td>{{$item->section}}</td>
                                     <td>

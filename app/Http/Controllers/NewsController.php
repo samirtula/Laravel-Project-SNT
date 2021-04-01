@@ -28,42 +28,50 @@ class NewsController extends Controller
                 $picture->move($path, $fileName . '.' . $extension);
                 $new->img_path = $inPublicPath . $fileName . '.' . $extension;
                 $new->save();
-                $result = redirect()->route('admin_news')->with('success', 'Данные добавлены');
+                $result = redirect()
+                    ->route('admin_news')
+                    ->with('success', 'Данные добавлены');
             } else {
                 $result = 'Некорректный формат файла';
             }
 
         } else {
             $new->save();
-            $result = redirect()->route('admin_news')->with('success', 'Данные добавлены');
+            $result = redirect()
+                ->route('admin_news')
+                ->with('success', 'Данные добавлены');
         }
         return $result;
     }
 
     public function showNews()
     {
-        // dd(News::all());
         $new = new News;
-        return view('news', ['data' => $new->orderBy('created_at', 'desc')->get()]);
+        return view('news', ['data' => $new
+            ->orderBy('created_at', 'desc')
+            ->get()]);
     }
 
     public function showOneNew($id)
     {
         $new = new News;
-        return view('new', ['data' => $new->find($id)]);
+        return view('new', ['data' => $new
+            ->find($id)]);
     }
 
     public function showNewsAdmin()
     {
-        //dd(News::all());
         $new = new News;
-        return view('admin_news', ['data' => $new->orderBy('created_at', 'desc')->get()]);
+        return view('admin.admin_news', ['data' => $new
+            ->orderBy('created_at', 'desc')
+            ->get()]);
     }
 
     public function adminNewsUpdate($id)
     {
         $new = new News;
-        return view('admin_news_update', ['data' => $new->find($id)]);
+        return view('admin.admin_news_update', ['data' => $new
+            ->find($id)]);
     }
 
     public function adminNewsUpdateSave($id, Request $req)
@@ -86,28 +94,35 @@ class NewsController extends Controller
                 $picture->move($path, $fileName . '.' . $extension);
                 $new->img_path = $inPublicPath . $fileName . '.' . $extension;
                 $new->save();
-                $result = redirect()->route('admin_news')->with('success', 'Данные изменены');
+                $result = redirect()
+                    ->route('admin_news')
+                    ->with('success', 'Данные изменены');
             } else {
                 $result = 'Некорректный формат файла';
             }
 
         } else {
             $new->save();
-            $result = redirect()->route('admin_news')->with('success', 'Данные изменены');
+            $result = redirect()
+                ->route('admin_news')
+                ->with('success', 'Данные изменены');
         }
         return $result;
     }
 
     public function adminNewsDelete($id)
     {
-        $new = (News::find($id));
-        if ($new->img_path != 'No') {
+        $new = News::find($id);
+        if (!empty($new->img_path)) {
             $path = $new->img_path;
             unlink(public_path($path));
         }
 
         $new->delete();
-        return redirect()->route('admin_news')->with('success', 'Данные удалены');
+
+        return redirect()
+            ->route('admin_news')
+            ->with('success', 'Данные удалены');
 
     }
 

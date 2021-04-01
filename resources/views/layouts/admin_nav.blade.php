@@ -22,8 +22,7 @@
         <div class="column column-30">
             <div class="user-section">
                 <div class="username">
-                    <h4>Jane Donovan</h4>
-                    <p>Администратор</p>
+                    <h4>Администратор</h4>
                 </div>
             </div>
         </div>
@@ -34,18 +33,22 @@
         <h5>Навигация</h5>
         <ul>
             <li><a href="{{route("admin")}}"><em class="fa fa-home"></em>Главная</a></li>
-            <li><a href="{{route("admin_users")}}"><em class="fa fa-pencil-square-o"></em>Пользователи</a></li>
             <li><a href="{{route("admin_news")}}"><em class="fa fa-pencil-square-o"></em>Новости</a></li>
             <li><a href="{{route("admin_boards")}}"><em class="fa fa-pencil-square-o"></em>Объявления</a></li>
             <li><a href="{{route("admin_docs")}}"><em class="fa fa-pencil-square-o"></em>Документы</a></li>
             <li><a href="{{route("admin_images")}}"><em class="fa fa-pencil-square-o"></em>Фотогалерея</a></li>
-            <li><a href=""><em class="fa fa-table"></em> Показания счетчиков</a></li>
+            <li><a href="{{route("admin_forum")}}"><em class="fa fa-pencil-square-o"></em>Форум</a></li>
+            <li><a href="{{route("admin_users")}}"><em class="fa fa-table"></em>Пользователи</a></li>
+            <li><a href="{{route("admin_indications")}}"><em class="fa fa-table"></em> Показания счетчиков</a></li>
+            <form id="logout-form" action="{{ route('logout') }}" method="post">
+                @csrf
+                <input type="submit" value="Выйти" style="margin-left: 20px">
+            </form>
         </ul>
     </div>
 
     @yield('content')
 
-    <p class="credit">HTML5 Admin Template by <a href="https://www.medialoot.com">Medialoot</a></p>
     </section>
 </div>
 <script src="js/validator.js"></script>

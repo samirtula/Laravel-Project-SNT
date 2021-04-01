@@ -15,28 +15,34 @@ class MessageController extends Controller
         $message->type = $req->input('type');
 
         $message->save();
-        return redirect()->route('admin');
+        return redirect()
+            ->route('admin')
+            ->with('success', 'Объявление добавлено');
 
     }
 
     public function showMessagesAdmin()
     {
-        //dd(News::all());
         $message = new MainMessage();
-        return view('admin', ['data' => $message->orderBy('created_at', 'desc')->get()]);
+        return view('admin.admin', ['data' => $message
+            ->orderBy('created_at', 'desc')
+            ->get()]);
     }
 
     public function showMessagesPublic()
     {
-        //dd(News::all());
         $message = new MainMessage();
-        return view('index', ['message' => $message->where('type', 'Объявление')->orderBy('created_at', 'desc')->first(), 'meeting'=> $message->where('type', 'Общее собрание')->orderBy('created_at', 'desc')->first()]);
+        return view('index', ['message' => $message
+            ->where('type', 'Объявление')
+            ->orderBy('created_at', 'desc')
+            ->first()]);
     }
 
     public function adminUpdate($id)
     {
         $message = new MainMessage;
-        return view('admin_update', ['data' => $message->find($id)]);
+        return view('admin.admin_update', ['data' => $message
+            ->find($id)]);
     }
 
     public function adminUpdateSave($id, Request $req)
@@ -45,14 +51,19 @@ class MessageController extends Controller
         $message->header = $req->input('header');
         $message->text = $req->input('text');
         $message->save();
-        return redirect()->route('admin')->with('success', 'Данные изменены');
+        return redirect()
+            ->route('admin')
+            ->with('success', 'Данные изменены');
 
     }
+
     public function adminDelete($id)
     {
         $message = (MainMessage::find($id));
         $message->delete();
 
-        return redirect()->route('admin')->with('success', 'Данные удалены');
+        return redirect()
+            ->route('admin')
+            ->with('success', 'Данные удалены');
     }
 }

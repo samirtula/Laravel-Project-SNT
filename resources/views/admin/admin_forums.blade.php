@@ -1,21 +1,20 @@
-@extends('layouts/admin_nav')
+@extends('layouts.admin_nav')
 @section('content')
 
     <section id="main-content" class="column column-offset-20">
-
-        <h5 class="mt-2">Добавить фото в галерею</h5>
-        <a class="anchor" name="form_add_photo"></a>
+        @include('inc.messages')
+        <h5 class="mt-2">Добавить объявление</h5>
         <div class="row grid-responsive">
             <div class="column ">
                 <div class="card">
                     <div class="card-title">
-                        <h3>Заполните поля для добавления фото </h3>
+                        <h3>Заполните поля для добавления обсуждения</h3>
                     </div>
                     <div class="card-block">
-                        <form action="{{route('add_image')}}" method="post" style="display: flex; flex-direction: column" class="forms" enctype="multipart/form-data">
+                        <form action="{{route('add_forum')}}" method="post"  style="display: flex; flex-direction: column" class="forms " enctype="multipart/form-data">
                             @csrf()
-                            <input type="text" class='req' name='keyword' placeholder="Введите ключевое слово" >
-                            <input type="file" class='custom-file-input' name='image'>
+                            <input type="text" class='req' name='topic' placeholder="Введите заголовок форума">
+                            <textarea type="text" class='req' name='message' placeholder="Введите тему обсуждения детально"></textarea>
                             <input type="submit" value="Добавить" style="width: 290px">
                         </form>
                     </div>
@@ -23,30 +22,29 @@
             </div>
         </div>
 
-        <h5 class="mt-2">Таблица фотографий</h5>
-        <a class="anchor" name="tables_images"></a>
+        <h5 class="mt-2">Таблица обсуждений</h5>
         <div class="row grid-responsive">
             <div class="column ">
                 <div class="card">
                     <div class="card-title">
-                        <h3>Список фотографий</h3>
+                        <h3>Список обсуждений</h3>
                     </div>
                     <div class="card-block">
                         <table>
                             <thead>
                             <tr>
                                 <th>Дата</th>
-                                <th>Описание</th>
+                                <th>Тема</th>
                                 <th>Удалить</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($data as $item)
                                 <tr>
-                                    <td>{{substr($item->created_at, 0, -3)}}</td>
-                                    <td>{{$item->description}}</td>
+                                    <td>{{date("d.m.Y H:i", strtotime($item->created_at))}}</td>
+                                    <td>{{$item->topic}}</td>
                                     <td>
-                                        <a href="{{route('admin_images_delete', $item->id)}}" class="button button_red">Удалить</a>
+                                        <a href="{{route('admin_forum_delete', $item->topic)}}" class="button button_red">Удалить</a>
                                     </td>
                                 </tr>
                             @endforeach

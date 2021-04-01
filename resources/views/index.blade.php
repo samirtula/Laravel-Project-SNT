@@ -40,32 +40,32 @@
         <div class="documents__wrapper">
             <h2>документы</h2>
             <div class="documents__menu-block">
-                <a class="documents__menu-block-link-wrapper" href="{{route('get_documents', 'documents')}}">
+                <a class="documents__menu-block-link-wrapper" href="{{route('get_documents', 'Документы')}}">
                     <div class="documents__menu-block-link-inner">
                         <span>Документы</span>
                     </div>
                 </a>
-                <a class="documents__menu-block-link-wrapper" href="{{route('get_documents', 'blanks')}}">
+                <a class="documents__menu-block-link-wrapper" href="{{route('get_documents', 'Бланки')}}">
                     <div class="documents__menu-block-link-inner">
                         <span>Бланки документов</span>
                     </div>
                 </a>
-                <a class="documents__menu-block-link-wrapper" href="{{route('get_documents', 'legislation')}}">
+                <a class="documents__menu-block-link-wrapper" href="{{route('get_documents', 'Законодательство')}}">
                     <div class="documents__menu-block-link-inner">
                         <span>Законодательство</span>
                     </div>
                 </a>
-                <a class="documents__menu-block-link-wrapper" href="{{route('get_documents', 'management')}}">
+                <a class="documents__menu-block-link-wrapper" href="{{route('get_documents', 'Менеджмент')}}">
                     <div class="documents__menu-block-link-inner">
                         <span>Работа правления</span>
                     </div>
                 </a>
-                <a class="documents__menu-block-link-wrapper" href="{{route('get_documents', 'improvement')}}">
+                <a class="documents__menu-block-link-wrapper" href="{{route('get_documents', 'Благоустройство')}}">
                     <div class="documents__menu-block-link-inner">
                         <span>Благоустройство</span>
                     </div>
                 </a>
-                <a class="documents__menu-block-link-wrapper" href="{{route('get_documents', 'services')}}">
+                <a class="documents__menu-block-link-wrapper" href="{{route('get_documents', 'Услуги')}}">
                     <div class="documents__menu-block-link-inner">
                         <span>Услуги</span>
                     </div>
