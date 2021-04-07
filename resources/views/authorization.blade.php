@@ -25,6 +25,12 @@
                     <input class="login__form-button" type="submit" value="войти">
                 </form>
                 @include('inc.messages')
+                @if (Route::has('password.request'))
+                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                        Сбросить пароль
+                    </a>
+                @endif
+
             </div>
             <div class="private-forms__registration registration">
 

@@ -35,7 +35,10 @@
       <change afterPath="$PROJECT_DIR$/resources/views/admin/admin_forums.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/resources/views/admin/admin_indications.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/resources/views/discuss.blade.php" afterDir="false" />
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/resources/views/users/forgot_password.blade.php" afterDir="false" />
+=======
+>>>>>>> 7a7412caf62bc15c0678aee2a5b75416ab25861a
       <change afterPath="$PROJECT_DIR$/resources/views/users/user_energy_update.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/resources/views/users/user_water_update.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
@@ -89,7 +92,10 @@
       <change beforePath="$PROJECT_DIR$/resources/views/documents.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/documents.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/forum.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/forum.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/gallery.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/gallery.blade.php" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/resources/views/inc/messages.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/inc/messages.blade.php" afterDir="false" />
+=======
+>>>>>>> 7a7412caf62bc15c0678aee2a5b75416ab25861a
       <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin_nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin_nav.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
@@ -262,11 +268,16 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/users" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+>>>>>>> 7a7412caf62bc15c0678aee2a5b75416ab25861a
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+<<<<<<< HEAD
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\resources\views" />
       <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\resources\views\users" />
@@ -274,12 +285,25 @@
       <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\public\js" />
       <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\public\css" />
     </key>
+=======
+>>>>>>> 7a7412caf62bc15c0678aee2a5b75416ab25861a
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\resources\views\users" />
       <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\resources\views" />
       <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\resources\views\admin" />
       <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\resources\lang" />
       <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\public\js" />
+<<<<<<< HEAD
+=======
+      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\resources\js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\resources\views\users" />
+      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\resources\views\admin" />
+      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\public\js" />
+      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\public\css" />
+      <recent name="C:\Users\Гахраманов Самир\Downloads\OpenServer\domains\sntlaravel\public" />
+>>>>>>> 7a7412caf62bc15c0678aee2a5b75416ab25861a
     </key>
   </component>
   <component name="RunDashboard">
@@ -334,12 +358,16 @@
       <workItem from="1616746332790" duration="925000" />
       <workItem from="1617135430810" duration="19390000" />
       <workItem from="1617223479812" duration="13005000" />
+<<<<<<< HEAD
       <workItem from="1617309254688" duration="11773000" />
       <workItem from="1617360138260" duration="1245000" />
       <workItem from="1617654524651" duration="17812000" />
       <workItem from="1617706302543" duration="1078000" />
       <workItem from="1617741853721" duration="1340000" />
       <workItem from="1617743587163" duration="789000" />
+=======
+      <workItem from="1617309254688" duration="10256000" />
+>>>>>>> 7a7412caf62bc15c0678aee2a5b75416ab25861a
     </task>
     <servers />
   </component>
