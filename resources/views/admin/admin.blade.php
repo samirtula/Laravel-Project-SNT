@@ -1,4 +1,4 @@
-@extends('layouts/admin_nav')
+@extends('layouts.admin_nav')
 @section('content')
 
     <section id="main-content" class="column column-offset-20">
@@ -46,7 +46,7 @@
                             <tbody>
                             @foreach($data as $item)
                                 <tr>
-                                    <td>{{substr($item->created_at, 0, -3)}}</td>
+                                    <td>{{date("d.m.Y H:i", strtotime($item->created_at))}}</td>
                                     <td>{{$item->header}}</td>
                                     <td>{{$item->type}}</td>
                                     <td>

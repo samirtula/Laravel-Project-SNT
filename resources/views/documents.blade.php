@@ -13,12 +13,12 @@
             <table class="docs__nav-table">
                 <tbody>
                 <tr>
-                    <td><a href="{{route('get_documents', 'documents')}}">Документы</a></td>
-                    <td><a href="{{route('get_documents', 'blanks')}}">Бланки</a></td>
-                    <td><a href="{{route('get_documents', 'legislation')}}">Законодательство</a></td>
-                    <td><a href="{{route('get_documents', 'management')}}">Работа правления</a></td>
-                    <td><a href="{{route('get_documents', 'improvement')}}">Благоустройство</a></td>
-                    <td><a href="{{route('get_documents', 'services')}}">Услуги</a></td>
+                    <td><a href="{{route('get_documents', 'Документы')}}">Документы</a></td>
+                    <td><a href="{{route('get_documents', 'Бланки')}}">Бланки</a></td>
+                    <td><a href="{{route('get_documents', 'Законодательство')}}">Законодательство</a></td>
+                    <td><a href="{{route('get_documents', 'Менеджмент')}}">Работа правления</a></td>
+                    <td><a href="{{route('get_documents', 'Благоустройство')}}">Благоустройство</a></td>
+                    <td><a href="{{route('get_documents', 'Услуги')}}">Услуги</a></td>
                 </tr>
                 </tbody>
             </table>
@@ -31,17 +31,16 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    @foreach($data as $item)
+                @foreach($data as $item)
+                    <tr>
                         <td>{{$item->name}}</td>
-                        <td>{{substr($item->created_at, 0, -3)}}</td>
+                        <td>{{date("d.m.Y H:i", strtotime($item->created_at))}}</td>
                         <td><a download href="{{$item->doc_path}}">
                                 <img class="docs__download-image" src="../images/documents/download.svg">
                             </a>
                         </td>
-                    @endforeach
-                </tr>
-
+                    </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>

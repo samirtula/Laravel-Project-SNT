@@ -1,0 +1,41 @@
+
+1.создать модельmake:model Boards -mс созданием файла миграции
+в моделс появилась модель а в папке мигрейшн файл миграции в майскл
+в фале миграции 2 функции ап и доун 
+ап для добавления изменения таблицы
+доун для отката
+
+в ап передадим креит и поля
+2.делаем артисан мигрейт и он создает только новую таблицу
+
+артисан мигрейт ролбек степ--3 или ресет(полностью) откатывает
+
+
+3. Создаем контроллер
+в котролер пишем юс и имя класса (модели) и создаем функцию
+public function addNew(NewsRequest $req)
+    {
+        $new = new News();
+        $new->header = $req->input('header');
+        $new->text = $req->input('text');
+        $new->keyword = $req->input('keyword');
+
+        if ($req->hasFile('image')) {
+
+            $allowExtensions = ['jpg','jpeg','png'];
+            $path = public_path() . '/uploads/news';
+            $picture = $req->file('image');
+            $fileName = (md5(date('Y-m-d H:i:s')));
+            $extension =  $picture->extension();
+
+            if (in_array($extension, $allowExtensions)) {
+                $picture->move($path, $fileName . '.' . $extension);
+                $new->img_path = $path . $fileName . '.' . $extension;
+            }
+        }
+        $new->save();
+       return redirect()->route('admin');
+    }
+
+4. в роутере прописываем сылки на функции в формачках пишем неймы 
+

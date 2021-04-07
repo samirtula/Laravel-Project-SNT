@@ -1,4 +1,4 @@
-@extends('layouts/user_nav')
+@extends('layouts.user_nav')
 @section('content')
 
     <section id="main-content" class="column column-offset-20">
