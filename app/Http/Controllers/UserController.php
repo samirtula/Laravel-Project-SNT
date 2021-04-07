@@ -172,7 +172,7 @@ class UserController extends Controller
                 return redirect()
                     ->route('forum');
             } else {
-                return view('authorization');
+                return view('auth.authorization');
             }
         }
     }

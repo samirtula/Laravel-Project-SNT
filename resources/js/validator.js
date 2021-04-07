@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     /*Проверям на пустые поля и соответствие регулярному выражению полей формы, а также соответствие пароля и повтора пароля*/
     const form = document.querySelectorAll('.forms');
-    console.log(form)
     form.forEach(function (element) {
         element.addEventListener('submit', function (e) {
             if (formValidate(element)) e.preventDefault();

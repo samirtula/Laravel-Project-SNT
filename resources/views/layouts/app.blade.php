@@ -4,7 +4,7 @@
     <title>@yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="utf-8">
-    <link href="/css/app.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
     <script
         src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
         integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
@@ -155,7 +155,7 @@
         </div>
     </div>
 </footer>
-<script type="text/javascript" src="/js/script.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
 

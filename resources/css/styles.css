@@ -248,7 +248,7 @@ input[type='email'], input[type='number'], input[type='password'], input[type='s
     box-shadow: none;
 }
 
-input[type='email'], input[type='number'], input[type='password'], input[type='search'], input[type='tel'], input[type='text'], input[type='url'], select {
+input[type='email'],textarea, input[type='number'], input[type='password'], input[type='search'], input[type='tel'], input[type='text'], input[type='url'], select {
     max-width: 60rem;
 }
 
@@ -270,7 +270,7 @@ select:focus {
     position: fixed;
     z-index: 1;
     width: 100%;
-    background: #fff;
+    background: #cef3e2;
     height: 80px;
     padding: 20px 0;
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
@@ -344,6 +344,7 @@ select:focus {
     display: block;
     padding: 10px 20px;
     color: #888;
+    font-weight: bold;
 }
 
 #sidebar ul li a .fa {
@@ -402,7 +403,6 @@ select:focus {
 }
 
 .user-section {
-    margin-top: -8px;
     margin-right: 40px;
 }
 
@@ -764,8 +764,20 @@ input[type='file'] {
     width: 290px;
     margin: auto;
 }
+.error_message {
+    color: red;
+    font-weight: bold;
+    width: 290px;
+    margin: auto;
+}
 .success_wrapper {
     margin-bottom: 50px;
 }
 
 
+.button_red:hover {
+    background-color:red ;
+}
+.card-block td {
+    min-width: 150px;
+}

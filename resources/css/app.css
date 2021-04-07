@@ -1492,7 +1492,7 @@ body.compensate-for-scrollbar {
 }
 
 #snt h3, #snt h4 {
-    font-family: Roboto Condensed;
+    font-family: Roboto;
     font-style: normal
 }
 
@@ -1521,12 +1521,12 @@ body.compensate-for-scrollbar {
 #snt h6 {
     font-weight: 700;
     font-size: 18px;
-    margin: 15px 0;
+    margin: 5px 0;
     cursor: pointer
 }
 
 #snt p {
-    font-family: Roboto Condensed;
+    font-family: Roboto;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -1537,9 +1537,13 @@ body.compensate-for-scrollbar {
 #snt a {
     text-decoration: none;
     color: #333334;
-    transition-duration: .1s
-}
+    transition-duration: .1s;
 
+
+}
+#snt .btn-link {
+    margin-bottom: 20px;
+}
 #snt form {
     display: flex;
     flex-direction: column;
@@ -2030,7 +2034,8 @@ body.compensate-for-scrollbar {
 @media screen and (max-width: 767px) {
     #snt .documents__menu-block-link-inner {
         text-align: center;
-        width: 250px
+        width: 250px;
+        height: 68px;
     }
 }
 
@@ -2138,10 +2143,6 @@ body.compensate-for-scrollbar {
     border-radius: 50%
 }
 
-#snt .contact__image-employee, #snt .contact__image-employee_1, #snt .contact__image-employee_2, #snt .contact__image-employee_3 {
-    background-image: url(../images/index/employee.jpg)
-}
-
 #snt .contact__text {
     font-family: Roboto Condensed;
     font-style: normal;
@@ -2197,7 +2198,7 @@ body.compensate-for-scrollbar {
 }
 
 #snt .payment-info {
-    font-family: Roboto Condensed;
+    font-family: Roboto;
     font-style: normal;
     font-weight: 400;
     display: flex;
@@ -2455,6 +2456,18 @@ body.compensate-for-scrollbar {
     text-align: center
 }
 
+#snt .news__article {
+    width: 312px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 35px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 10px;
+    height: auto;
+    overflow: hidden;
+}
+
 #snt .news__nav {
     max-width: 250px;
     min-width: 250px;
@@ -2469,8 +2482,6 @@ body.compensate-for-scrollbar {
 }
 
 #snt .news__nav-header {
-    border-bottom: 2px solid grey;
-    padding-bottom: 15px;
 }
 
 #snt .news__nav-header:first-child h6 {
@@ -2628,7 +2639,7 @@ body.compensate-for-scrollbar {
     font-size: 16px;
     line-height: 70%;
     box-sizing: border-box;
-    color: #000
+    color: #333334;
 }
 
 @media screen and (max-width: 1024px) {
@@ -2842,6 +2853,7 @@ body.compensate-for-scrollbar {
     padding: 10px;
     border-radius: 5px;
     resize: none
+
 }
 
 #snt .letter__form textarea::-webkit-input-placeholder {
@@ -2962,7 +2974,7 @@ body.compensate-for-scrollbar {
     font-family: Roboto Condensed
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 922px) {
     #snt .boards__nav {
         display: none
     }
@@ -3001,8 +3013,9 @@ body.compensate-for-scrollbar {
     box-sizing: border-box;
     border-radius: 5px;
     padding: 10px;
-    height: 410px;
-    overflow: hidden
+    height: auto;
+    overflow: hidden;
+    justify-content: flex-end;
 }
 
 #snt .boards__article:hover {
@@ -3017,6 +3030,13 @@ body.compensate-for-scrollbar {
 
 #snt .ad__text > h5 {
     margin: 15px 0
+}
+
+#snt .ad__text p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 #snt .application-image {
@@ -3364,11 +3384,12 @@ body.compensate-for-scrollbar {
     left: 0;
     margin: auto;
     max-width: 95%;
-    height: auto
+    height: auto;
+    max-height: 92%;
 }
 
 #snt .docs-image {
-    background-image: url(../images/documents/documents.jpg)
+    background-image: url(../images/documents/documents_image.jpg)
 }
 
 #snt .docs-image__title {
@@ -3569,7 +3590,7 @@ label input[type=checkbox] {
     width: 15px;
     height: 15px;
     position: absolute;
-    left: 0;
+    left: -7px;
     top: -3px;
     border: 1px solid #dbdbdb;
     border-radius: 3px
@@ -3706,7 +3727,9 @@ label input[type=checkbox] {
     text-align: left;
     color: #000;
     border-collapse: collapse;
-    margin: 0 auto 35px
+    margin: 0 auto 35px;
+    width: 100%;
+
 }
 
 #snt .forum-discuss__table table thead {
@@ -3945,6 +3968,10 @@ label input[type=checkbox] {
     visibility: visible
 }
 
+#snt .article__image {
+    height: 191px;
+}
+
 #snt .article__text p {
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -3991,8 +4018,33 @@ label input[type=checkbox] {
     margin-top: 10px
 }
 
+#snt .warning {
+    color: red;
+    font-size: 14px;
+}
 
+#snt .forum-delete-image {
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+}
 
+#snt .forum-delete-link {
+    display: flex;
+    width: 160px;
+    align-items: center;
+    margin-top: 10px;
+}
 
+#snt .success {
+    color: #49a010;
+    font-weight: bold;
+    width: 290px;
+    margin: auto;
+}
+
+#snt .success_wrapper {
+    margin-bottom: 50px;
+}
 
 

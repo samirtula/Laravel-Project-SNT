@@ -14,7 +14,6 @@ Route::get('/letter/', function () {
     return view('letter');
 })->name('letter');
 
-
 Route::get('/', 'App\Http\Controllers\MessageController@showMessagesPublic')
     ->name('index');
 
